@@ -1,18 +1,20 @@
-<%= form_for @item do |f| %>
-<div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="outter-div">
+  <h2>Add a new item</h2>
+  <%= form_for @item do |f| %>
+  <div>
+    <%= f.label :name, :class=> "input-field" %>
+    <%= f.text_field :name, :class=> "form-control" %>
+  </div>
+  <div>
+    <%= f.label :description, :class=> "input-field" %>
+    <%= f.text_area :description, :class=> "form-control" %>
+  </div>
+  <div>
+    <%= f.label :price, :class=> "input-field" %>
+    <%= f.number_field :price, class: :text_field, step: :any, :class=> "form-control" %>
+  </div>
+  <div class="input-field">
+    <%= f.submit 'Add new item', :class=> "btn btn-primary" %>
+  </div>
+  <% end %>
 </div>
-<div>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</div>
-<div>
-  <%= f.label :price %>
-  <%= f.number_field :price, class: :text_field, step: :any %>
-</div>
-<div>
-  <%= f.submit %>
-</div>
-<% end %>
-

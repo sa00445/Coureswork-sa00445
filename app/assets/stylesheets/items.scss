@@ -1,3 +1,20 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input-field {
+  padding-top: 20px;
+}
+
+.bottom-padding {
+  padding-bottom: 20px;
+}
+
+.outter-div {
+  width: 50%;
+  margin: auto;
+  border: 0.5px solid #A9A9A9;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 3px #888888;
+}
