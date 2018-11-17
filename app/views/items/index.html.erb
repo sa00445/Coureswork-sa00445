@@ -1,7 +1,7 @@
 <h2>Items</h2>
 <%= link_to "Add new item", new_item_path%>
 
-<table>
+<table class="table">
   <thead>
     <th>Name</th>
     <th>Description</th>
@@ -13,8 +13,8 @@
     <td><%= item.description %></td>
     <td><%= item.price %></td>
     <td>
-      <%= link_to "Edit item", edit_item_path(item)%>
-      <%= link_to "Delete item", item, method: :delete, data: {confirm: "Do you really want to delete this item?"}%> <!-- try to display the item name in this message-->
+      <%= link_to "Edit item", edit_item_path(item), class: "btn btn-primary"%>
+      <%= link_to "Delete item", item, method: :delete, data: {confirm: "Do you really want to delete this item?"},class: "btn btn-danger"%> <!-- try to display the item name in this message-->
     </td>
   </tr>
   <% end %>
