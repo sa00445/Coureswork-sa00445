@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    if user_signed_in?
+      @items = Item.where(:user_id => current_user.id).order("created_at DESC")
+    end
   end
 
   def show
@@ -8,11 +10,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = current_user.items.build
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.build(item_params)
     if @item.save
       redirect_to items_path
     else
